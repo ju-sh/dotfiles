@@ -1,0 +1,35 @@
+general {
+        colors = true
+        interval = 5
+}
+
+order += "wireless wlp4s0"
+order += "memory"
+order += "battery 1"
+order += "time"
+
+wireless wlp4s0 {
+        format_up = "W: %essid (%quality, %bitrate)"
+        format_down = "W: down"
+}
+
+battery 1 {
+        format = "%status %percentage (+%remaining) U: %consumption"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = "15"
+}
+
+time {
+        format = "%H:%M %a %d %b %Y"
+}
+
+#memory {
+#        format = "%used"
+#        threshold_degraded = "10%"
+#        format_degraded = "MEMORY: %free"
+#}
