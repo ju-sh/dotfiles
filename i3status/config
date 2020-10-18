@@ -3,23 +3,52 @@ general {
         interval = 5
 }
 
+order += "volume master"
 order += "wireless wlp4s0"
-order += "memory"
+order += "ethernet eth0"
+order += "cpu_usage"
 order += "battery 1"
 order += "time"
 
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: ⛔(%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
 wireless wlp4s0 {
-        format_up = "W: %essid (%quality, %bitrate)"
+        format_up = "W: %essid (%quality)"
+        #format_up = "W: %essid (%quality, %bitrate)"
         format_down = "W: down"
 }
 
+ethernet eth0 {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+cpu_usage {
+        format = "CPU %usage"
+}
+
 battery 1 {
+        # don't show decimal places in remaining battery percentage
+        integer_battery_capacity = true
+
+        # consider last full capacity as 100%
+        last_full_capacity = true
+
+        # don't show seconds in remaining time
+        hide_seconds = true
+
         format = "%status %percentage (+%remaining) U: %consumption"
         format_down = "No battery"
-        status_chr = "⚡ CHR"
-        status_bat = "🔋 BAT"
-        status_unk = "? UNK"
-        status_full = "☻ FULL"
+        status_chr = "⚡"
+        status_bat = "🔋"
+        status_unk = "?"
+        status_full = "☻"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = "15"
 }
@@ -27,9 +56,3 @@ battery 1 {
 time {
         format = "%H:%M %a %d %b %Y"
 }
-
-#memory {
-#        format = "%used"
-#        threshold_degraded = "10%"
-#        format_degraded = "MEMORY: %free"
-#}
