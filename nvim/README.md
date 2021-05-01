@@ -1,0 +1,2 @@
+Located at `~/.config/nvim/`.
+
