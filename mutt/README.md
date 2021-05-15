@@ -1,2 +1,2 @@
-.mailcap: `~/.mailcap`
-.muttrc : `~/.muttrc`
+ - `.mailcap`: `~/.mailcap`
+ - `.muttrc` : `~/.muttrc`
