@@ -16,6 +16,9 @@ set shiftwidth=4
 " Expand tabs to spaces
 set expandtab
 
+" Always show status line
+set laststatus=2
+
 " Set color scheme
 colo industry
 
@@ -33,12 +36,15 @@ if has("cscope")
     " allow relative paths from cscope.out db
     set csre
 
-    " add any database in current directory
-    if filereadable("cscope.out")
-        silent cs add cscope.out
-    " else add database pointed to by environment
-    elseif $CSCOPE_DB != ""
+    " show message when adding cscope db (cscopeverbose)
+    set csverb
+
+    " add database pointed to by environment
+    if $CSCOPE_DB != ""
         silent cs add $CSCOPE_DB
+    " else add any database in current directory
+    elseif filereadable("cscope.out")
+        silent cs add cscope.out
     endif
 
 
@@ -189,24 +195,111 @@ digr _v 7525  " ᵥ
 digr _x 8339  " ₓ
 
 
+"" Italic letters (resemble italics syntax in emacs org-mode)
+digr /A 119860  " 𝐴
+digr /B 119861  " 𝐵
+digr /C 119862  " 𝐶
+digr /D 119863  " 𝐷
+digr /E 119864  " 𝐸
+digr /F 119865  " 𝐹
+digr /G 119866  " 𝐺
+digr /H 119867  " 𝐻
+digr /I 119868  " 𝐼
+digr /J 119869  " 𝐽
+digr /K 119870  " 𝐾
+digr /L 119871  " 𝐿
+digr /M 119872  " 𝑀
+digr /N 119873  " 𝑁
+digr /O 119874  " 𝑂
+digr /P 119875  " 𝑃
+digr /Q 119876  " 𝑄
+digr /R 119877  " 𝑅
+digr /S 119878  " 𝑆
+digr /T 119879  " 𝑇
+digr /U 119880  " 𝑈
+digr /V 119881  " 𝑉
+digr /W 119882  " 𝑊
+digr /X 119883  " 𝑋
+digr /Y 119884  " 𝑌
+digr /Z 119885  " 𝑍
+digr /a 119886  " 𝑎
+digr /b 119887  " 𝑏
+digr /c 119888  " 𝑐
+digr /d 119889  " 𝑑
+digr /e 119890  " 𝑒
+digr /f 119891  " 𝑓 (overriding ⁄: Fraction slash)
+digr /g 119892  " 𝑔
+digr /h 8462  " ℎ (using Planck constant)
+digr /i 119894  " 𝑖
+digr /j 119895  " 𝑗
+digr /k 119896  " 𝑘
+digr /l 119897  " 𝑙
+digr /m 119898  " 𝑚
+digr /n 119899  " 𝑛
+digr /o 119900  " 𝑜
+digr /p 119901  " 𝑝
+digr /q 119902  " 𝑞
+digr /r 119903  " 𝑟
+digr /s 119904  " 𝑠
+digr /t 119905  " 𝑡
+digr /u 119906  " 𝑢
+digr /v 119907  " 𝑣
+digr /w 119908  " 𝑤
+digr /x 119909  " 𝑥
+digr /y 119910  " 𝑦
+digr /z 119911  " 𝑧
+
+
 "" Number sets
 digr NN 8469  " ℕ: Set of natural numbers
 digr RR 8477  " ℝ: Set of real numbers
 digr ZZ 8484  " ℤ: Set of integers
-              " ℂ: Set of complex numbers
+digr CC 8450  " ℂ: Set of complex numbers (overriding ~T: Cancel character)
+digr QQ 8474  " ℚ: Set of rational numbers
+digr BB 120121  " 𝔹: Set of Booleans (overriding ¦)
 
+"" Constants
+digr ee 8495  " ℯ: Euler's number ≅ 2.71828
+digr ii 119894  " 𝑖: Unit imaginary number (overriding: і)
+
+digr ph 8501  " ℵ : Aleph number (in addition to א (A+))
+
+"" Fancy letters
+digr el 8467  " ℓ
 
 "" Proof theory stuff
+digr TN 8708  " ∄ (Since ∃ is TE)
+digr n< 8602  " ↚ (Since ← is <-)
+digr n> 8603  " ↛ (Since → is ->)
 digr pr 8866  " ⊢
 digr MO 8872  " ⊨
 digr np 8876  " ⊬
 digr NM 8877  " ⊭
 digr bx 9633  " □ (duplicate of OS)
 digr dm 9671  " ◇ (duplicate of Dw)
+digr !3 8802  " ≢ (because ≡ is `digr =3`)
+digr mp 8614  " ↦: maps to
+digr FF 10200 " ⊥ (like False) (overriding : Form feed)
+digr TT 10201 " ⊤ (like True) (duplicate of -T)
+
+digr dt 8901  " ⋅ ('small dot')
+digr DT 8226  " • ('big dot') (overriding ^?: DELETE character)
 
 
-"Cube root   ∛   U+221B
-"Fourth root ∜   U+221C
+
+digr r2 8730  " √ (square root) (duplicate of RT)
+digr r3 8731  " ∛ (cube root)
+digr r4 8732  " ∜ (fourth root)
+
+
+"" Lines
+digr pp 10178  " ⟂ (perpendicular to)
+digr ll 8214  " ‖ (parallel to)
+
+
+"" Quantum theory stuff
+digr kt 10217  " ⟩ (ket symbol)
+
 
 "" Matrix brackets
 
@@ -216,3 +309,24 @@ digr dm 9671  " ◇ (duplicate of Dw)
 "rbrackuend      ⎤
 "rbrackextender  ⎥
 "rbracklend      ⎦
+"brace left top ⎧
+"brace left middle ⎨
+"brace left bottom ⎩
+"brace right top ⎫
+"brace right middle ⎬
+"brace right bottom ⎭
+"brace extender     ⎮
+
+
+"" Box drawing symbols
+
+" ━ (HH)
+" ┃ (VV)
+" ┏ (DR)
+" ┓ (LD)
+" ┳ (DH)
+" ┻ (UH)
+" ┒ (Dl)
+" ┑ (dL)
+" ┐ (dl)
+" ┍ (dR)
