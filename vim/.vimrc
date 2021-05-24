@@ -260,7 +260,6 @@ digr BB 120121  " 𝔹: Set of Booleans (overriding ¦)
 
 "" Constants
 digr ee 8495  " ℯ: Euler's number ≅ 2.71828
-digr ii 119894  " 𝑖: Unit imaginary number (overriding: і)
 
 digr ph 8501  " ℵ : Aleph number (in addition to א (A+))
 
@@ -330,3 +329,5 @@ digr kt 10217  " ⟩ (ket symbol)
 " ┑ (dL)
 " ┐ (dl)
 " ┍ (dR)
+
+digr ~~ 822  " strikethrough text overlay
