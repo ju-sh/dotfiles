@@ -1,0 +1,76 @@
+# Inspired by:
+#
+#  - https://lists.debian.org/debian-l10n-english/2016/06/msg00014.html
+#  - https://github.com/linsong/w3m-config/blob/master/keymap
+#  - https://github.com/tokuhirom/w3m/blob/master/doc/keymap.default
+#  - https://github.com/gotbletu/dotfiles_v2/blob/master/normal_user/w3m/.w3m/keymap
+#  - Default keymap: https://raw.githubusercontent.com/tokuhirom/w3m/master/doc/keymap.default
+#
+
+# Scrolling page
+keymap C-f NEXT_PAGE
+keymap C-b PREV_PAGE
+
+keymap C-e UP
+keymap C-y DOWN
+
+keymap C-d NEXT_HALF_PAGE
+keymap C-u PREV_HALF_PAGE
+
+# Centre screen on cursor on current column
+keymap zh CENTER_H
+
+# Centre screen on cursor on current line 
+keymap zz CENTER_V 
+
+
+# Moving cursor
+keymap j MOVE_DOWN
+keymap k MOVE_UP
+keymap h MOVE_LEFT
+keymap l MOVE_RIGHT
+
+keymap 0 LINE_BEGIN
+keymap $ LINE_END
+
+keymap g BEGIN
+keymap G END
+
+
+
+# Tab management
+keymap K PREV_TAB
+keymap J NEXT_TAB
+keymap F TAB_LINK  # Open link under cursor in a new tab
+keymap D CLOSE_TAB  # Close current tab
+keymap O TAB_GOTO https://ddg.gg/lite # Open a new url in a new tab
+#keymap SPC TAB_GOTO  # Open a new url in a new tab
+keymap V TAB_MENU
+
+
+keymap yy EXTERN "printf %s $1 | xsel -b"
+
+
+# History navigation
+## Preserving history stack
+keymap H PREV
+keymap L NEXT
+
+
+# Go to URL
+keymap o GOTO
+
+# Toggle between source and rendered document
+keymap \\ VIEW
+
+
+# Options
+keymap M-o OPTIONS
+#keymap M-S-O SET_OPTION
+
+# Misc
+keymap M-s SAVE_SCREEN  # Save what was rendered by w3m to a file
+keymap M-d DOWNLOAD  # Download document source
+keymap i GOTO_LINK  # Like enter
+keymap p PEEK_LINK  # Peek address of link under cursor.
+keymap SPC PEEK  # Peek url of current document

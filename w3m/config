@@ -1,0 +1,9 @@
+extbrowser firefox
+color 1
+basic_color terminal
+anchor_color white
+image_color yellow
+form_color green
+mark_color red
+bg_color terminal
+save_hist 1
