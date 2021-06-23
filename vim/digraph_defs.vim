@@ -2,8 +2,10 @@
 " https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode
 " https://github.com/joom/latex-unicoder.vim/blob/master/autoload/unicoder.vim
 
+
 "" Set theory
 digr )- 8713  " ∉
+
 
 "" Super-script characters
 " Note: q, C, F, Q, S, X, Y, Z haven't got super-script version.
@@ -17,8 +19,6 @@ digr ^6 8310  " ⁶ (duplicate of 6S)
 digr ^7 8311  " ⁷ (duplicate of 7S)
 digr ^8 8312  " ⁸ (duplicate of 8S)
 digr ^9 8313  " ⁹ (duplicate of 9S)
-digr ^+ 8314  " ⁺ (duplicate of +S)
-digr ^- 8315  " ⁻ (duplicate of -S)
 digr ^a 7491  " ᵃ
 digr ^b 7495  " ᵇ
 digr ^c 7580  " ᶜ
@@ -64,6 +64,12 @@ digr ^U 7489  " ᵁ
 digr ^V 11389  " ⱽ
 digr ^W 7490  " ᵂ
 
+digr ^+ 8314  " ⁺ (duplicate of +S)
+digr ^- 8315  " ⁻ (duplicate of -S)
+digr ^= 8316  " ⁼
+digr ^( 8317  " ⁽
+digr ^) 8318  " ⁾
+
 
 "" Sub-script characters
 " Note: b, c, d, f, g, q, w, y, z haven't got sub-script version.
@@ -78,8 +84,6 @@ digr _6 8326  " ₆ (duplicate of 6s)
 digr _7 8327  " ₇ (duplicate of 7s)
 digr _8 8328  " ₈ (duplicate of 8s)
 digr _9 8329  " ₉ (duplicate of 9s)
-digr _+ 8330  " ₊ (duplicate of +s)
-digr _- 8331  " ₋ (duplicate of -s)
 digr _a 8336  " ₐ
 digr _e 8337  " ₑ
 digr _h 8341  " ₕ
@@ -97,6 +101,12 @@ digr _t 8348  " ₜ
 digr _u 7524  " ᵤ
 digr _v 7525  " ᵥ
 digr _x 8339  " ₓ
+
+digr _+ 8330  " ₊ (duplicate of +s)
+digr _- 8331  " ₋ (duplicate of -s)
+digr _= 8332  " ₌
+digr _( 8333  " ₍
+digr _) 8334  " ₎
 
 
 "" Italic letters (resemble italics syntax in emacs org-mode)
@@ -162,13 +172,15 @@ digr CC 8450  " ℂ: Set of complex numbers (overriding ~T: Cancel character)
 digr QQ 8474  " ℚ: Set of rational numbers
 digr BB 120121  " 𝔹: Set of Booleans (overriding ¦)
 
+
 "" Constants
 digr ee 8495  " ℯ: Euler's number ≅ 2.71828
-
 digr ph 8501  " ℵ : Aleph number (in addition to א (A+))
+
 
 "" Fancy letters
 digr el 8467  " ℓ
+
 
 "" Proof theory stuff
 digr TN 8708  " ∄ (Since ∃ is TE)
@@ -211,6 +223,7 @@ digr ~~ 822  " strikethrough text overlay
 "" With grave
 " digr a`        " à
 
+
 "" With tilde
 digr A~ 195  " Ã (duplicate of 'A?')
 digr E~ 7868 " Ẽ (duplicate of 'E?')
@@ -228,7 +241,6 @@ digr o~ 245  " õ (duplicate of 'o?')
 digr u~ 361  " ũ (duplicate of 'u?')
 digr v~ 7805 " ṽ (duplicate of 'v?')
 digr y~ 7929 " ỹ (duplicate of 'y?')
-
 
 
 "" Matrix brackets
