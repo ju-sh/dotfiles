@@ -1,42 +1,102 @@
-# use maildir
-set mbox_type='Maildir'
+# https://wiki.archlinux.org/title/mutt
+# https://medium.com/@itsjefftong/mutt-gmail-59447a4bffef
+# https://nickdesaulniers.github.io/blog/2016/06/18/mutt-gmail-ubuntu/
 
-set hostname='hostname'
+
+# Use maildir format
+set mbox_type = Maildir
+
+set editor = "vim"
+set charset = "utf-8"
+
+# Order of fields being displayed
+#hdr_order date from to cc subject
+hdr_order date from subject
+
+
+
+# Each of the following starts with something like "imaps://imap.gmail.com/"
+## Default location of mail boxes
+set folder = ""
+
+## Folder into which mail read from spoolfile folder should be saved into
+set mbox = " ... [Gmail]/All Mail"
+
+## File into which outgoing mail should be appended
+set record = " ... [Gmail]/Sent Mail"
+
+## Folder into which draft mail should be saved into
+set postponed = " ... [Gmail]/Drafts"
+
+
+
+# No need to copy sent mail. Gmail automatically saves a copy.
+set copy = no
+
+
+# Location of spool file (+ translates to the value of 'folder' variable)
+#set spoolfile = "~/Maildir"
+set spoolfile = "+INBOX"
+
+set sort = reverse-date-received
+#set sort = "threads"
+#set sort_aux = "reverse-last-date-received"
+
+#set hostname = 'hostname'
 
 # View html automatically
 auto_view text/html
 
 
-set ssl_starttls=yes
-set ssl_force_tls=yes
-set imap_user = '<EMAILID>'
-set imap_pass = '<PASSWORD>'
-set from='<email>'
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set imap_user = 'my@domain.com'
+#set imap_pass = '<ask-every-time>'
+set from = 'my@domain.com'
+set use_from = yes
 
-set realname='<NAME>'
-set folder = 'imaps://imap.gmail.com/'
-set spoolfile = 'imaps://imap.gmail.com/INBOX'
-set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set realname = 'Julin S'
+
+# Cache message headers
+# https://gitlab.com/muttmua/mutt/-/wikis/MuttGuide/Caching
 set header_cache = "~/.mutt/cache/headers"
 
 # cache copies of mail to this dir
 set message_cachedir = "~/.mutt/cache/bodies"
 
 set certificate_file = "~/.mutt/certificates"
-set smtp_url = "smtps://email"
 
-set move = no
-set imap_keepalive = 900
+# smtp domain for gmail is: smtp.gmail.com:465
+set smtp_url = "smtps://my@domain@smtp-domain/"
 
-#bind index G imap-fetch-mail
-set editor = "vim"
-set charset = "utf-8"
+# Move read messages from spool mailbox to mbox
+#set move = yes
 
-# How often checking for new mail is done (seconds)
-#set mail_check = 5
+# Amount of time in seconds that mutt waits before polling open
+# IMAP connections
+set imap_keepalive = 300
+
+bind index "^" imap-fetch-mail
+
+
+# Amount of time in seconds after which mutt checks for new mail
+set mail_check = 5
 
 # Show "O" on index for old but unopened mail
-#set mark_old=yes
+set mark_old=yes
 
-# Make mail thread tree narrower to allow viewing longer threads
+# Make thread tree narrower. Allows deep trees to fit in screen.
 #set narrow_tree = yes
+
+# mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
+
+bind index G last-entry
+bind index gg first-entry
+bind pager j next-line
+bind pager k previous-line
+#bind pager ^f next-page
+#bind pager ^b previous-page
+
+set alias_file = "~/.mutt/aliases"
+#set sort_alias = alias
+source $alias_file

@@ -19,6 +19,8 @@ set expandtab
 " Minimum number of lines to keep above and below cursor
 "set scrolloff=0
 
+"set textwidth=80
+
 " Always show status line
 set laststatus=2
 

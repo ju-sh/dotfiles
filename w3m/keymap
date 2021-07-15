@@ -68,6 +68,9 @@ keymap \\ VIEW
 keymap M-o OPTIONS
 #keymap M-S-O SET_OPTION
 
+# Help
+keymap ? HELP
+
 # Misc
 keymap M-s SAVE_SCREEN  # Save what was rendered by w3m to a file
 keymap M-d DOWNLOAD  # Download document source

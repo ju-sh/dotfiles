@@ -2,6 +2,11 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+; Activate Evil mode
+;; https://www.emacswiki.org/emacs/Evil
+(require 'evil)
+(evil-mode 1)
+
 
 (setq-default word-wrap t)
 
