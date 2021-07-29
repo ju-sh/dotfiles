@@ -2,6 +2,10 @@
 " https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode
 " https://github.com/joom/latex-unicoder.vim/blob/master/autoload/unicoder.vim
 
+"" Currency
+digr Rs 8360  " ₨  
+digr rs 8377  " ₹ (INR)
+
 
 "" Set theory
 digr )- 8713  " ∉
