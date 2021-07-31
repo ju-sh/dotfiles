@@ -9,7 +9,8 @@ cp mutt/.mailcap $HOME_PATH
 cp mutt/.muttrc $HOME_PATH
 
 mkdir -p $HOME_PATH/.vim/
-cp vim/digraph_defs.vim $HOME_PATH/.vim/
+cp vim/digraphsrc.vim $HOME_PATH/.vim/
+cp vim/cscoperc.vim $HOME_PATH/.vim/
 cp vim/.vimrc $HOME_PATH
 
 mkdir -p $HOME_PATH/.elinks/

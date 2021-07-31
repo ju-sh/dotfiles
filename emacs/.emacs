@@ -12,6 +12,12 @@
 (setq-default word-wrap t)
 
 
+;; Added with Custom
+; Proof general: Change colour of highlighting for executed part (light green)
+(custom-set-faces
+ '(proof-locked-face ((t (:extend t :background "#bcffbd")))))
+
+
 ;; Display current column
 ; https://www.gnu.org/software/emacs/manual/html_node/efaq/Displaying-the-current-line-or-column.html
 (setq column-number-mode t)
@@ -71,3 +77,7 @@
 (add-hook 'emacs-startup-hook
   (lambda ()
     (message (format "Emacs started in %s" (emacs-init-time)))))
+
+
+; Disable automatic indentation
+(setq electric-indent-mode nil)
